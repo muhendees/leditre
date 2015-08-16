@@ -1,0 +1,30 @@
+<h2>Listing article</h2>
+
+<%= render "form.html", action: articles_path(@conn, :search) %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for articles <- @article do %>
+    <tr>
+      <td><%= articles.title %></td>
+      <td><%= String.slice(articles.body, 1, 15) %>...</td>
+
+      <td class="text-right">
+        <%= link "Show", to: articles_path(@conn, :show, articles), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: articles_path(@conn, :edit, articles), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: articles_path(@conn, :delete, articles), method: :delete, class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New articles", to: articles_path(@conn, :new) %>

@@ -1,0 +1,7 @@
+<div class="jumbotron">
+  <h2>AğıllıBala Layihəsi!</h2>
+  <p class="lead">Ağıllı Balaların Ensiklopediyası</p>
+  <div class="form-group">
+    <%= link "Məqalələr", to: articles_path(@conn, :index), class: "btn btn-primary" %>
+  </div>
+</div>

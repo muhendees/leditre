@@ -1,0 +1,17 @@
+<h2>Show articles</h2>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @articles.title %>
+  </li>
+
+  <li>
+    <strong>Body:</strong>
+    <%= @articles.body %>
+  </li>
+
+</ul>
+
+<%= link "Back", to: articles_path(@conn, :index) %>
